@@ -1,0 +1,15 @@
+DECLARE
+ v_job emp.tob%TYPE;
+ v_empno emp.empno%YTPE;
+ v_sal emp.sal%TYPE;
+ v_raise NUMBER(3.2);
+ v_new_sal NUMBER(6);
+ BEGIN
+ SELECT job,sal INTO v_job,v_sal
+ FROM emp WHERE empno = v_empno;
+ CASE V_job = 'MANAGER' THEN
+ IF v_sal < 2500 THEN v_raise := 50;
+ ELSE v_raise := 0
+ END IF;
+
+ END;
